@@ -67,7 +67,7 @@ const __meemeeTimer = setInterval(() => {
 
 function __meemeeMain() {
 // ==================== 以下为脚本版原始包体 ====================
-// 咩咩工具箱 · 1.5.0
+// 咩咩工具箱 · 1.5.0 / 内部构建 20261005-themes-r2 / 界面皮肤系统修订：修复皮肤面板文字重叠（选择器收敛）；P5/1999 皮肤不只换色——形状（P5 硬朗锐角+斜切头+网点半色调，1999 双线金框+衬线标题）与动画（P5 快速回弹，1999 缓慢优雅）全面贴合原作风格 / 修复：酒馆助手接口多层解析（脚本全局→主窗口→TavernHelper→ESM 动态导入），仍缺接口时降级只读浏览全部条目并明确提示；1.4.0 预设条目开关整体重写 / 预设条目开关整体重写：默认平铺直列显示全部条目（不再自动分组）；手动分组（新建/移动/整组开关/折叠）；条目新建/编辑（名称/内容/角色/深度）/删除；修改自动保存到预设文件（💾同步）；双源读取不丢条目；底部显示已显示X/共Y条；面板角标版本号。
 (() => {
 const h=window.parent;
 if(h.__meemeCombinedUI){h.__meemeCombinedUI.open();return;}
@@ -1223,8 +1223,6 @@ function transferProtected(target,reference,current,tags) {
   if (host[KEY]) { try { host[KEY].open(); } catch (_) {} return; }
   const doc = host.document;
   const STORE = 'meeme_preset_toggles_v1';
-  const VERSION = 'v1.5.0';
-
   const KEEP = /别关/;
   const API_NAMES = ['getVariables', 'replaceVariables', 'insertOrReplaceVariables', 'getPreset', 'updatePresetWith', 'getLoadedPresetName', 'getPresetNames'];
   const T = {};
@@ -1285,7 +1283,7 @@ function transferProtected(target,reference,current,tags) {
 #meeme-preset-toggles .mp-head{flex:none;background:#170f25;padding:10px 16px 8px;border-bottom:1px solid #3a2a55}
 #meeme-preset-toggles .mp-heading{display:flex;align-items:center;justify-content:space-between;gap:8px}
 #meeme-preset-toggles .mp-heading strong{font-size:16px;letter-spacing:.025em;color:#f1eaff;min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
-#meeme-preset-toggles .mp-ver{flex:none;font-size:10px;line-height:1.7;color:#9d94b8;border:1px solid #684583;border-radius:6px;padding:0 5px}
+
 #meeme-preset-toggles .mp-actions{display:flex;gap:6px;flex:none}
 #meeme-preset-toggles .mp-actions button{padding:6px 9px;font-size:12px}
 #meeme-preset-toggles .mp-actions button[data-on=true],#meeme-preset-toggles .mp-toolbtns button[data-on=true]{border-color:#26d2bd;background:#123c3b;color:#affff2}
@@ -1356,7 +1354,7 @@ function transferProtected(target,reference,current,tags) {
 @media(prefers-reduced-motion:reduce){#meeme-preset-toggles *,#meeme-preset-toggles *::before,#meeme-preset-toggles *::after{transition:none!important}}
 </style>
 <section hidden aria-label="预设条目开关">
-<header class="mp-head"><div class="mp-heading"><strong>🎛️ 预设条目开关</strong><span class="mp-ver">${VERSION}</span><span class="mp-actions"><button type="button" data-manage aria-pressed="false" title="新建分组、移动条目、重命名/解散分组">✏️ 分组管理</button><button type="button" data-refresh>刷新</button><button type="button" data-close>收起面板</button></span></div><small data-preset></small></header>
+<header class="mp-head"><div class="mp-heading"><strong>🎛️ 预设条目开关</strong><span class="mp-actions"><button type="button" data-manage aria-pressed="false" title="新建分组、移动条目、重命名/解散分组">✏️ 分组管理</button><button type="button" data-refresh>刷新</button><button type="button" data-close>收起面板</button></span></div><small data-preset></small></header>
 <div class="mp-tools"><input type="search" data-search placeholder="搜索条目名称…" aria-label="搜索条目名称"><div class="mp-toolbtns"><button type="button" data-expand-all title="展开全部分组">全展</button><button type="button" data-collapse-all title="收起全部分组">全收</button><button type="button" data-newentry title="新建一个预设条目（加到列表末尾）">＋条目</button><button type="button" data-newgroup title="新建分组（分组管理模式下用 📁 把条目移进去）">＋分组</button><button type="button" data-syncsave aria-pressed="true" title="开启后：条目修改会同时写回预设文件（自动保存）；关闭后：只改当前使用中的预设">💾同步</button></div></div>
 <div class="mp-status" data-status role="status" aria-live="polite"></div>
 <div class="mp-list" data-list></div>
@@ -2064,7 +2062,9 @@ function transferProtected(target,reference,current,tags) {
 #meeme-combined-menu .mm-skin{transition-delay:68ms;border-color:#c9a86a;background:radial-gradient(circle at 35% 25%,#3d3226,#171207)}
 .mm-skin-panel{position:fixed;z-index:2147483550;width:280px;max-width:calc(100vw - 20px);background:linear-gradient(145deg,#1b1226,#0c0618);border:1px solid #7144a5;border-radius:14px;box-shadow:0 16px 50px #000c;padding:10px;pointer-events:auto;display:flex;flex-direction:column;gap:8px;color:#e6e6fa}
 .mm-skin-panel[hidden]{display:none!important}
-.mm-skin-head{font-size:14px;color:#f1eaff;padding:2px 4px}
+.mm-skin-head{font-size:14px;color:#f1eaff;padding:2px 4px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.mm-skin-close{flex:none;width:26px;height:26px;border-radius:8px;border:1px solid #684583;background:#241735;color:#b7accf;font-size:13px;line-height:1;cursor:pointer;padding:0;font-family:inherit}
+.mm-skin-close:hover{background:#352047;color:#f1eaff}
 .mm-skin-list{display:flex;flex-direction:column;gap:6px}
 .mm-skin-item{display:flex;align-items:center;gap:10px;width:100%;text-align:left;padding:9px 10px;border:1px solid #684583;border-radius:10px;background:#241735;color:#e8ddf8;cursor:pointer;font:inherit}
 .mm-skin-item:hover{background:#352047}
@@ -2072,7 +2072,7 @@ function transferProtected(target,reference,current,tags) {
 .mm-skin-dots{display:flex;gap:4px;flex:none}
 .mm-skin-dots i{width:14px;height:14px;border-radius:50%;border:1px solid #ffffff44;display:block}
 .mm-skin-item b{font-size:13px;display:block}
-.mm-skin-item small{display:block;font-size:11px;color:#b7accf;margin-top:2px;line-height:1.4}
+
 .mm-skin-tip{font-size:11px;color:#8f86a8;padding:0 4px}
 /* —— P5 · 怪盗红黑 —— */
 html[data-mm-theme=p5] #meeme-combined-menu .mm-small{border-color:#e60012;background:radial-gradient(circle at 35% 25%,#333338,#0c0c0e);box-shadow:0 0 14px #e6001255}
@@ -2123,7 +2123,6 @@ html[data-mm-theme=r1999] #timeline-switcher-v1 .mm-splash,html[data-mm-theme=r1
 html[data-mm-theme=r1999] #timeline-switcher-v1 .mm-return,html[data-mm-theme=r1999] #meeme-translation .mm-return,html[data-mm-theme=r1999] #meeme-preset-toggles .mm-return{background:#16302b;border-color:#c9a86a;color:#efe6cf}
 /* —— 皮肤系统 r2：面板内文字选择器保护 —— */
 #meeme-combined-menu .mm-skin-panel span{font-size:13px;line-height:1.35}
-#meeme-combined-menu .mm-skin-panel small{position:static;transform:none;white-space:normal;background:none;padding:0}
 /* —— P5 r2：形状语言（锐角/斜切/网点半色调/快速回弹） —— */
 html[data-mm-theme=p5] #timeline-switcher-v1 .ts-panel,html[data-mm-theme=p5] #meeme-translation section,html[data-mm-theme=p5] #meeme-preset-toggles section{border-radius:2px!important;background-color:#0c0c0e!important;background-image:radial-gradient(rgba(230,0,18,.08) 1.2px,transparent 1.3px)!important;background-size:14px 14px!important}
 html[data-mm-theme=p5] #meeme-preset-toggles .mp-head,html[data-mm-theme=p5] #meeme-translation .mt-head{padding-bottom:16px!important;clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),0 100%);background-image:repeating-linear-gradient(135deg,rgba(230,0,18,.14) 0 8px,transparent 8px 22px)!important}
@@ -2144,7 +2143,34 @@ html[data-mm-theme=r1999] #meeme-preset-toggles .mp-row{transition-duration:.3s}
 html[data-mm-theme=r1999] #meeme-preset-toggles .mp-row[data-on=true]{border-left:3px solid #c9a86a}
 html[data-mm-theme=r1999] #meeme-preset-toggles .mp-switch::after{transition:transform .38s cubic-bezier(.25,.8,.25,1),background .3s!important}
 html[data-mm-theme=r1999] #meeme-preset-toggles .mp-head small{color:#b8a888}
-</style><svg width="0" height="0" aria-hidden="true" style="position:absolute;pointer-events:none"><defs><filter id="mm-image-wobble" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.026 0.035" numOctaves="1" seed="4" result="noise"><animate attributeName="baseFrequency" values="0.026 0.035;0.034 0.027;0.022 0.031;0.026 0.035" dur="4.8s" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G"><animate attributeName="scale" values="3;7;4;6;3" dur="3.7s" repeatCount="indefinite"/></feDisplacementMap></filter></defs></svg><button type="button" class="mm-small mm-time" aria-label="时间线切换器"><span>🕒</span><small>时间线切换器</small></button><button type="button" class="mm-small mm-preset" aria-label="预设条目开关"><span>🎛️</span><small>预设条目开关</small></button><button type="button" class="mm-small mm-text" aria-label="翻译／润色"><span>🪶</span><small>翻译／润色</small></button><button type="button" class="mm-small mm-skin" aria-label="界面皮肤"><span>🎨</span><small>界面皮肤</small></button><div class="mm-skin-panel" hidden><div class="mm-skin-head">🎨 界面皮肤</div><div class="mm-skin-list"></div><div class="mm-skin-tip">点击即切换并自动保存，刷新后保持。</div></div>`;
+/* —— 主题动画跟随：菜单小球与悬浮球动效随皮肤切换 —— */
+html[data-mm-theme=p5] #meeme-combined-menu .mm-small{transition:transform .2s cubic-bezier(.18,1.5,.3,1),opacity .1s}
+html[data-mm-theme=r1999] #meeme-combined-menu .mm-small{transition:transform .72s cubic-bezier(.25,.8,.25,1),opacity .4s}
+html[data-mm-theme=p5] #timeline-switcher-v1 .ts-orb.mm-jelly-open{animation:mm-jelly-p5 .34s cubic-bezier(.18,1.5,.3,1)}
+@keyframes mm-jelly-p5{0%,100%{transform:scale(1)}35%{transform:scale(.82,1.24) rotate(-3deg)}65%{transform:scale(1.14,.9) rotate(2deg)}}
+html[data-mm-theme=r1999] #timeline-switcher-v1 .ts-orb.mm-jelly-open{animation:mm-jelly-r1999 1.1s cubic-bezier(.25,.8,.25,1)}
+@keyframes mm-jelly-r1999{0%,100%{transform:scale(1)}40%{transform:scale(1.07,.96)}70%{transform:scale(.98,1.02)}}
+/* —— P5 r3：怪盗拼贴深化（斜切头条/硬边/冲击斜体） —— */
+html[data-mm-theme=p5] .mm-skin-panel{background:#0c0c0e radial-gradient(rgba(230,0,18,.08) 1.2px,transparent 1.3px);background-size:14px 14px}
+html[data-mm-theme=p5] .mm-skin-head{font-weight:800;font-style:italic;letter-spacing:.08em;color:#fff;background:repeating-linear-gradient(135deg,rgba(230,0,18,.16) 0 8px,transparent 8px 22px);margin:-10px -10px 0;padding:10px 12px 14px;clip-path:polygon(0 0,100% 0,100% calc(100% - 8px),0 100%)}
+html[data-mm-theme=p5] .mm-skin-item{background:#17171a;border:2px solid #43434b;border-radius:3px;transition:transform .1s cubic-bezier(.2,1.6,.4,1),background .1s,border-color .1s,box-shadow .1s}
+html[data-mm-theme=p5] .mm-skin-item:hover{background:#e60012;border-color:#ff4d5e;transform:translateX(3px) skewX(-2deg)}
+html[data-mm-theme=p5] .mm-skin-item[data-on=true]{background:#e60012;border-color:#fff;box-shadow:4px 4px 0 rgba(230,0,18,.35)}
+html[data-mm-theme=p5] .mm-skin-item[data-on=true] b{color:#fff}
+html[data-mm-theme=p5] .mm-skin-close{border-radius:3px;border-width:2px;background:#17171a;border-color:#43434b;color:#f5f5f7}
+html[data-mm-theme=p5] .mm-skin-close:hover{background:#e60012;border-color:#ff4d5e;color:#fff}
+html[data-mm-theme=p5] .mm-skin-tip{color:#8f8a94}
+/* —— 1999 r3：装饰艺术深化（双线金框/衬线标题/金线分隔） —— */
+html[data-mm-theme=r1999] .mm-skin-panel{outline:1px solid rgba(201,168,106,.4);outline-offset:4px;background:linear-gradient(160deg,#10211e,#0b1715)}
+html[data-mm-theme=r1999] .mm-skin-head{font-family:Georgia,'Times New Roman',serif;letter-spacing:.14em;color:#efe6cf;padding:4px 6px 10px;background:linear-gradient(90deg,transparent,#c9a86a55,transparent) bottom no-repeat;background-size:100% 1px}
+html[data-mm-theme=r1999] .mm-skin-item{background:#132622;border:1px solid #6d5c3e;border-radius:12px;transition:all .38s cubic-bezier(.25,.8,.25,1)}
+html[data-mm-theme=r1999] .mm-skin-item:hover{background:#1e4038;border-color:#c9a86a;box-shadow:0 0 14px rgba(201,168,106,.25)}
+html[data-mm-theme=r1999] .mm-skin-item[data-on=true]{background:linear-gradient(135deg,#1c352e,#0f211d);border-color:#c9a86a;box-shadow:inset 0 0 0 1px rgba(201,168,106,.35),0 0 12px rgba(201,168,106,.2)}
+html[data-mm-theme=r1999] .mm-skin-item[data-on=true] b{color:#f4e8c8;font-family:Georgia,'Times New Roman',serif;letter-spacing:.05em}
+html[data-mm-theme=r1999] .mm-skin-close{border-radius:50%;border-color:#6d5c3e;background:#16302b;color:#efe6cf;transition:all .35s}
+html[data-mm-theme=r1999] .mm-skin-close:hover{background:#1e4038;border-color:#c9a86a}
+html[data-mm-theme=r1999] .mm-skin-tip{color:#8fa39a}
+</style><svg width="0" height="0" aria-hidden="true" style="position:absolute;pointer-events:none"><defs><filter id="mm-image-wobble" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.026 0.035" numOctaves="1" seed="4" result="noise"><animate attributeName="baseFrequency" values="0.026 0.035;0.034 0.027;0.022 0.031;0.026 0.035" dur="4.8s" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G"><animate attributeName="scale" values="3;7;4;6;3" dur="3.7s" repeatCount="indefinite"/></feDisplacementMap></filter></defs></svg><button type="button" class="mm-small mm-time" aria-label="时间线切换器"><span>🕒</span><small>时间线切换器</small></button><button type="button" class="mm-small mm-preset" aria-label="预设条目开关"><span>🎛️</span><small>预设条目开关</small></button><button type="button" class="mm-small mm-text" aria-label="翻译／润色"><span>🪶</span><small>翻译／润色</small></button><button type="button" class="mm-small mm-skin" aria-label="界面皮肤"><span>🎨</span><small>界面皮肤</small></button><div class="mm-skin-panel" hidden><div class="mm-skin-head">🎨 界面皮肤<button type="button" class="mm-skin-close" aria-label="关闭">✕</button></div><div class="mm-skin-list"></div><div class="mm-skin-tip">点击即切换并自动保存，刷新后保持。</div></div>`;
  doc.documentElement.appendChild(root);
  const time=root.querySelector('.mm-time'),text=root.querySelector('.mm-text'),presetBtn=root.querySelector('.mm-preset'),skinBtn=root.querySelector('.mm-skin');
  const skinPanel=root.querySelector('.mm-skin-panel'),skinList=root.querySelector('.mm-skin-list');
@@ -2154,7 +2180,7 @@ html[data-mm-theme=r1999] #meeme-preset-toggles .mp-head small{color:#b8a888}
   const r=orb.getBoundingClientRect(),v=host.visualViewport,w=v?.width||host.innerWidth,h=v?.height||host.innerHeight,ox=v?.offsetLeft||0,oy=v?.offsetTop||0;
   const left=r.left+r.width/2<ox+w/2,dir=left?1:-1;
   const cy=Math.max(94+oy,Math.min(oy+h-94,r.top+r.height/2));
-  for(const [b,dy] of [[time,-72],[presetBtn,0],[text,72],[skinBtn,144]]){b.style.left=(r.left+r.width/2-22)+'px';b.style.top=(r.top+r.height/2-22)+'px';b.style.setProperty('--mm-x',dir*78+'px');b.style.setProperty('--mm-y',(cy+dy-r.top-r.height/2)+'px');}
+  for(const [b,dy] of [[time,-72],[presetBtn,0],[text,72],[skinBtn,144]]){const by=Math.max(oy+34,Math.min(oy+h-34,cy+dy));b.style.left=(r.left+r.width/2-22)+'px';b.style.top=(r.top+r.height/2-22)+'px';b.style.setProperty('--mm-x',dir*78+'px');b.style.setProperty('--mm-y',(by-r.top-r.height/2)+'px');}
   const pw=Math.min(520,w-20),space=left?ox+w-r.right-22:r.left-ox-22;
   let x,y,ph;
   if(space>=pw){x=left?r.right+12:r.left-pw-12;ph=Math.min(740,h-20);y=Math.max(oy+10,Math.min(oy+h-ph-10,r.top+r.height/2-ph/2));}
@@ -2163,7 +2189,7 @@ html[data-mm-theme=r1999] #meeme-preset-toggles .mp-head small{color:#b8a888}
   skinPanel.style.left=x+'px';skinPanel.style.top=y+'px';
  }
  function menuVisible(on){root.dataset.open=String(on);orb.classList.toggle('mm-jelly-open',on);root.inert=!on;orb.setAttribute('aria-expanded',String(state!=='closed'));orb.setAttribute('aria-label',state==='closed'?'展开咩咩菜单':'关闭咩咩菜单');}
- function hideWindows(){timeline.close();presetToggles.close();tp.hidden=true;rp.hidden=true;rp.inert=true;pp.hidden=true;pp.inert=true;skinPanel.hidden=true;}
+ function hideWindows(){timeline.close();presetToggles.close();tp.hidden=true;rp.hidden=true;rp.inert=true;pp.hidden=true;pp.inert=true;skinPanel.hidden=true;++skinSeq;}
  function cancelAnimations(){for(const a of animations)a.cancel();animations.clear();for(const p of splashes.values())p.hidden=true;}
  function collapsed(p){const r=p.getBoundingClientRect(),o=orb.getBoundingClientRect();p.style.transformOrigin=(o.left+o.width/2-r.left)+'px '+(o.top+o.height/2-r.top)+'px';return {transform:'scale(.08,.14)',opacity:0};}
  async function animate(element,frames,duration,easing){if(!element.animate||host.matchMedia?.('(prefers-reduced-motion: reduce)').matches)return;const a=element.animate(frames,{duration,easing});animations.add(a);try{await a.finished;}catch(_){}finally{animations.delete(a);}}
@@ -2187,21 +2213,40 @@ html[data-mm-theme=r1999] #meeme-preset-toggles .mp-head small{color:#b8a888}
  translation.root.querySelector('[data-open]').hidden=true;
  time.onclick=()=>change('timeline');presetBtn.onclick=()=>change('preset');text.onclick=()=>change('translation');
  const THEMES=[
-  {id:'',name:'默认 · 紫青',desc:'深紫夜色 + 青色点缀',dots:['#170d2b','#8844ff','#26d2bd']},
-  {id:'p5',name:'P5 · 怪盗红黑',desc:'女神异闻录5：红黑撞色、硬边斜影、漫画感',dots:['#0c0c0e','#e60012','#ffffff']},
-  {id:'r1999',name:'重返未来 · 1999',desc:'英伦复古：墨绿 + 黄铜金 + 米白细描边',dots:['#10211e','#c9a86a','#efe6cf']},
+  {id:'',name:'默认 · 紫青',dots:['#170d2b','#8844ff','#26d2bd']},
+  {id:'p5',name:'P5 · 怪盗红黑',dots:['#0c0c0e','#e60012','#ffffff']},
+  {id:'r1999',name:'重返未来 · 1999',dots:['#10211e','#c9a86a','#efe6cf']},
  ];
  const THEME_KEY='meeme_toolbox_theme';
  function currentTheme(){try{return host.localStorage.getItem(THEME_KEY)||'';}catch(_){return '';}}
  function paintSkin(){const cur=currentTheme();for(const b of skinList.children)b.dataset.on=String(b.dataset.themeId===cur);}
- function applyTheme(id){if(id)doc.documentElement.dataset.mmTheme=id;else delete doc.documentElement.dataset.mmTheme;try{host.localStorage.setItem(THEME_KEY,id);}catch(_){ }paintSkin();}
- for(const t of THEMES){const b=doc.createElement('button');b.type='button';b.className='mm-skin-item';b.dataset.themeId=t.id;b.innerHTML='<span class="mm-skin-dots">'+t.dots.map(c=>'<i style="background:'+c+'"></i>').join('')+'</span><span><b>'+t.name+'</b><small>'+t.desc+'</small></span>';b.onclick=()=>applyTheme(t.id);skinList.appendChild(b);}
- skinBtn.onclick=()=>{const show=skinPanel.hidden;hideWindows();skinPanel.hidden=!show;place();paintSkin();};
- applyTheme(currentTheme());
+ function applyTheme(id,silent){if(id)doc.documentElement.dataset.mmTheme=id;else delete doc.documentElement.dataset.mmTheme;try{host.localStorage.setItem(THEME_KEY,id);}catch(_){ }paintSkin();if(!silent)animate(orb,[{transform:'scale(1)'},{transform:'scale(1.16)',offset:.4},{transform:'scale(1)'}],id==='p5'?240:id==='r1999'?680:460,id==='p5'?'cubic-bezier(.18,1.5,.3,1)':'cubic-bezier(.25,.8,.25,1)');}
+ for(const t of THEMES){const b=doc.createElement('button');b.type='button';b.className='mm-skin-item';b.dataset.themeId=t.id;b.innerHTML='<span class="mm-skin-dots">'+t.dots.map(c=>'<i style="background:'+c+'"></i>').join('')+'</span><span><b>'+t.name+'</b></span>';b.onclick=()=>{applyTheme(t.id);host.setTimeout(()=>closeSkin(),380);};skinList.appendChild(b);}
+ let skinSeq=0;
+ async function openSkin(){
+  hideWindows();const id=++skinSeq;skinPanel.hidden=false;skinPanel.style.opacity='1';skinPanel.style.transform='none';place();paintSkin();
+  const thm=currentTheme();
+  await animate(skinPanel,[collapsed(skinPanel),{transform:'none',opacity:1}],thm==='p5'?220:thm==='r1999'?520:400,thm==='p5'?'cubic-bezier(.18,1.5,.3,1)':thm==='r1999'?'cubic-bezier(.25,.8,.25,1)':'cubic-bezier(.16,1,.3,1)');
+  if(id!==skinSeq||disposed)return;
+  const items=[...skinList.children],step=thm==='p5'?40:thm==='r1999'?90:60;
+  items.forEach((b,i)=>host.setTimeout(()=>{if(id!==skinSeq||disposed)return;animate(b,thm==='p5'?[{opacity:0,transform:'translateX(-16px) skewX(-10deg)'},{opacity:1,transform:'none'}]:[{opacity:0,transform:'translateY(10px)'},{opacity:1,transform:'none'}],thm==='p5'?200:thm==='r1999'?460:320,thm==='p5'?'cubic-bezier(.18,1.5,.3,1)':'cubic-bezier(.25,.8,.25,1)');},i*step));
+ }
+ async function closeSkin(instant){
+  const id=++skinSeq;if(skinPanel.hidden)return;
+  if(instant){skinPanel.hidden=true;return;}
+  const thm=currentTheme();
+  await animate(skinPanel,[{transform:'none',opacity:1},collapsed(skinPanel)],thm==='p5'?180:thm==='r1999'?400:300,thm==='r1999'?'cubic-bezier(.4,0,.2,1)':'cubic-bezier(.55,0,.85,.35)');
+  if(id!==skinSeq||disposed)return;skinPanel.hidden=true;
+ }
+ function skinOutside(e){if(skinPanel.hidden)return;if(skinPanel.contains(e.target)||skinBtn.contains(e.target))return;closeSkin();}
+ doc.addEventListener('pointerdown',skinOutside,true);
+ skinBtn.onclick=()=>{skinPanel.hidden?openSkin():closeSkin();};
+ skinPanel.querySelector('.mm-skin-close').onclick=()=>closeSkin();
+ applyTheme(currentTheme(),true);
  function key(e){if(e.key==='Escape'&&state!=='closed'){e.preventDefault();e.stopImmediatePropagation();change(state==='menu'?'closed':'menu');}}
  doc.addEventListener('keydown',key,true);host.addEventListener('resize',place);host.visualViewport?.addEventListener('resize',place);host.visualViewport?.addEventListener('scroll',place);
  const observer=new host.MutationObserver(place);observer.observe(orb,{attributes:true,attributeFilter:['style']});
- function cleanup(){if(disposed)return;disposed=true;++serial;cancelAnimations();observer.disconnect();doc.removeEventListener('keydown',key,true);host.removeEventListener('resize',place);host.visualViewport?.removeEventListener('resize',place);host.visualViewport?.removeEventListener('scroll',place);root.remove();delete host.__meemeCombinedUI;}
+ function cleanup(){if(disposed)return;disposed=true;++serial;cancelAnimations();observer.disconnect();doc.removeEventListener('keydown',key,true);doc.removeEventListener('pointerdown',skinOutside,true);host.removeEventListener('resize',place);host.visualViewport?.removeEventListener('resize',place);host.visualViewport?.removeEventListener('scroll',place);root.remove();delete host.__meemeCombinedUI;}
  window.addEventListener('pagehide',cleanup,{once:true});place();menuVisible(false);
 })();
 
