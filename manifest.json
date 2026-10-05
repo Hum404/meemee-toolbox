@@ -1,0 +1,10 @@
+{
+  "display_name": "咩咩工具箱",
+  "loading_order": 1,
+  "requires": [],
+  "optional": [],
+  "js": "index.js",
+  "author": "Hum404",
+  "version": "1.1.0",
+  "home_page": "https://github.com/Hum404/meemee-toolbox"
+}
