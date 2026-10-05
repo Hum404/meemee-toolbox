@@ -2170,7 +2170,18 @@ html[data-mm-theme=r1999] .mm-skin-item[data-on=true] b{color:#f4e8c8;font-famil
 html[data-mm-theme=r1999] .mm-skin-close{border-radius:50%;border-color:#6d5c3e;background:#16302b;color:#efe6cf;transition:all .35s}
 html[data-mm-theme=r1999] .mm-skin-close:hover{background:#1e4038;border-color:#c9a86a}
 html[data-mm-theme=r1999] .mm-skin-tip{color:#8fa39a}
-</style><svg width="0" height="0" aria-hidden="true" style="position:absolute;pointer-events:none"><defs><filter id="mm-image-wobble" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.026 0.035" numOctaves="1" seed="4" result="noise"><animate attributeName="baseFrequency" values="0.026 0.035;0.034 0.027;0.022 0.031;0.026 0.035" dur="4.8s" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G"><animate attributeName="scale" values="3;7;4;6;3" dur="3.7s" repeatCount="indefinite"/></feDisplacementMap></filter></defs></svg><button type="button" class="mm-small mm-time" aria-label="时间线切换器"><span>🕒</span><small>时间线切换器</small></button><button type="button" class="mm-small mm-preset" aria-label="预设条目开关"><span>🎛️</span><small>预设条目开关</small></button><button type="button" class="mm-small mm-text" aria-label="翻译／润色"><span>🪶</span><small>翻译／润色</small></button><button type="button" class="mm-small mm-skin" aria-label="界面皮肤"><span>🎨</span><small>界面皮肤</small></button><div class="mm-skin-panel" hidden><div class="mm-skin-head">🎨 界面皮肤<button type="button" class="mm-skin-close" aria-label="关闭">✕</button></div><div class="mm-skin-list"></div><div class="mm-skin-tip">点击即切换并自动保存，刷新后保持。</div></div>`;
+/* —— 主题字体：整体字体跟随原作 —— */
+html[data-mm-theme=p5] #timeline-switcher-v1,html[data-mm-theme=p5] #meeme-translation,html[data-mm-theme=p5] #meeme-preset-toggles,html[data-mm-theme=p5] #meeme-combined-menu{font-family:'Arial Black','Helvetica Neue','PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif!important;font-weight:700;letter-spacing:.02em}
+html[data-mm-theme=r1999] #timeline-switcher-v1,html[data-mm-theme=r1999] #meeme-translation,html[data-mm-theme=r1999] #meeme-preset-toggles,html[data-mm-theme=r1999] #meeme-combined-menu{font-family:Georgia,'Times New Roman','Noto Serif SC','Source Han Serif SC','Songti SC','SimSun',serif!important}
+/* —— 1999 问候对话框 —— */
+.mm-greet{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:2147483555;pointer-events:none}
+.mm-greet[hidden]{display:none!important}
+.mm-greet-box{pointer-events:auto;display:flex;align-items:center;gap:14px;background:linear-gradient(160deg,#10211e,#0b1715);border:1px solid #c9a86a;outline:1px solid rgba(201,168,106,.4);outline-offset:3px;border-radius:4px;padding:10px 20px;color:#efe6cf;font-family:Georgia,'Times New Roman','Noto Serif SC','Songti SC',serif;letter-spacing:.12em;font-size:15px;box-shadow:0 10px 34px #000a}
+.mm-greet-text{display:flex;align-items:center;gap:12px;white-space:nowrap}
+.mm-greet-text::before,.mm-greet-text::after{content:'◆';font-size:8px;color:#c9a86a}
+.mm-greet-close{flex:none;width:22px;height:22px;border-radius:50%;border:1px solid #6d5c3e;background:#16302b;color:#b8a888;font-size:11px;line-height:1;cursor:pointer;padding:0;font-family:inherit}
+.mm-greet-close:hover{border-color:#c9a86a;color:#f4e8c8}
+</style><svg width="0" height="0" aria-hidden="true" style="position:absolute;pointer-events:none"><defs><filter id="mm-image-wobble" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency="0.026 0.035" numOctaves="1" seed="4" result="noise"><animate attributeName="baseFrequency" values="0.026 0.035;0.034 0.027;0.022 0.031;0.026 0.035" dur="4.8s" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="noise" scale="5" xChannelSelector="R" yChannelSelector="G"><animate attributeName="scale" values="3;7;4;6;3" dur="3.7s" repeatCount="indefinite"/></feDisplacementMap></filter></defs></svg><button type="button" class="mm-small mm-time" aria-label="时间线切换器"><span>🕒</span><small>时间线切换器</small></button><button type="button" class="mm-small mm-preset" aria-label="预设条目开关"><span>🎛️</span><small>预设条目开关</small></button><button type="button" class="mm-small mm-text" aria-label="翻译／润色"><span>🪶</span><small>翻译／润色</small></button><button type="button" class="mm-small mm-skin" aria-label="界面皮肤"><span>🎨</span><small>界面皮肤</small></button><div class="mm-skin-panel" hidden><div class="mm-skin-head">🎨 界面皮肤<button type="button" class="mm-skin-close" aria-label="关闭">✕</button></div><div class="mm-skin-list"></div><div class="mm-skin-tip">点击即切换并自动保存，刷新后保持。</div></div><div class="mm-greet" hidden><div class="mm-greet-box"><span class="mm-greet-text">Hi, Timepigger</span><button type="button" class="mm-greet-close" aria-label="关闭">✕</button></div></div>`;
  doc.documentElement.appendChild(root);
  const time=root.querySelector('.mm-time'),text=root.querySelector('.mm-text'),presetBtn=root.querySelector('.mm-preset'),skinBtn=root.querySelector('.mm-skin');
  const skinPanel=root.querySelector('.mm-skin-panel'),skinList=root.querySelector('.mm-skin-list');
@@ -2220,7 +2231,16 @@ html[data-mm-theme=r1999] .mm-skin-tip{color:#8fa39a}
  const THEME_KEY='meeme_toolbox_theme';
  function currentTheme(){try{return host.localStorage.getItem(THEME_KEY)||'';}catch(_){return '';}}
  function paintSkin(){const cur=currentTheme();for(const b of skinList.children)b.dataset.on=String(b.dataset.themeId===cur);}
- function applyTheme(id,silent){if(id)doc.documentElement.dataset.mmTheme=id;else delete doc.documentElement.dataset.mmTheme;try{host.localStorage.setItem(THEME_KEY,id);}catch(_){ }paintSkin();if(!silent)animate(orb,[{transform:'scale(1)'},{transform:'scale(1.16)',offset:.4},{transform:'scale(1)'}],id==='p5'?240:id==='r1999'?680:460,id==='p5'?'cubic-bezier(.18,1.5,.3,1)':'cubic-bezier(.25,.8,.25,1)');}
+ const greetBox=root.querySelector('.mm-greet');
+async function greet(show,silent,force){
+ if(show){greetBox.hidden=false;if(!silent)await animate(greetBox,[{opacity:0,transform:'translateX(-50%) translateY(-16px)'},{opacity:1,transform:'translateX(-50%)'}],620,'cubic-bezier(.25,.8,.25,1)');return;}
+ if(greetBox.hidden)return;
+ if(silent){greetBox.hidden=true;return;}
+ await animate(greetBox,[{opacity:1,transform:'translateX(-50%)'},{opacity:0,transform:'translateX(-50%) translateY(-12px)'}],380,'cubic-bezier(.4,0,.2,1)');
+ if(force||currentTheme()!=='r1999')greetBox.hidden=true;
+}
+greetBox.querySelector('.mm-greet-close').onclick=()=>greet(false,false,true);
+ function applyTheme(id,silent){if(id)doc.documentElement.dataset.mmTheme=id;else delete doc.documentElement.dataset.mmTheme;try{host.localStorage.setItem(THEME_KEY,id);}catch(_){ }paintSkin();greet(id==='r1999',silent);if(!silent)animate(orb,[{transform:'scale(1)'},{transform:'scale(1.16)',offset:.4},{transform:'scale(1)'}],id==='p5'?240:id==='r1999'?680:460,id==='p5'?'cubic-bezier(.18,1.5,.3,1)':'cubic-bezier(.25,.8,.25,1)');}
  for(const t of THEMES){const b=doc.createElement('button');b.type='button';b.className='mm-skin-item';b.dataset.themeId=t.id;b.innerHTML='<span class="mm-skin-dots">'+t.dots.map(c=>'<i style="background:'+c+'"></i>').join('')+'</span><span><b>'+t.name+'</b></span>';b.onclick=()=>{applyTheme(t.id);host.setTimeout(()=>closeSkin(),380);};skinList.appendChild(b);}
  let skinSeq=0;
  async function openSkin(){
