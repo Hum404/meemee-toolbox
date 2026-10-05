@@ -2232,8 +2232,10 @@ html[data-mm-theme=r1999] #timeline-switcher-v1,html[data-mm-theme=r1999] #meeme
  function currentTheme(){try{return host.localStorage.getItem(THEME_KEY)||'';}catch(_){return '';}}
  function paintSkin(){const cur=currentTheme();for(const b of skinList.children)b.dataset.on=String(b.dataset.themeId===cur);}
  const greetBox=root.querySelector('.mm-greet');
+let greetTimer=0;
 async function greet(show,silent,force){
- if(show){greetBox.hidden=false;if(!silent)await animate(greetBox,[{opacity:0,transform:'translateX(-50%) translateY(-16px)'},{opacity:1,transform:'translateX(-50%)'}],620,'cubic-bezier(.25,.8,.25,1)');return;}
+ host.clearTimeout(greetTimer);
+ if(show){greetBox.hidden=false;if(!silent)await animate(greetBox,[{opacity:0,transform:'translateX(-50%) translateY(-16px)'},{opacity:1,transform:'translateX(-50%)'}],620,'cubic-bezier(.25,.8,.25,1)');greetTimer=host.setTimeout(()=>greet(false,false,true),3000);return;}
  if(greetBox.hidden)return;
  if(silent){greetBox.hidden=true;return;}
  await animate(greetBox,[{opacity:1,transform:'translateX(-50%)'},{opacity:0,transform:'translateX(-50%) translateY(-12px)'}],380,'cubic-bezier(.4,0,.2,1)');
