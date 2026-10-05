@@ -2061,10 +2061,10 @@ function transferProtected(target,reference,current,tags) {
 #timeline-switcher-v1 .ts-orb.mm-tool-active{filter:url(#mm-image-wobble)}
 #timeline-switcher-v1 .ts-orb:hover{border-color:#e1c3ff;box-shadow:0 0 20px #b270f28c,0 0 5px #eedaff70}
 #meeme-combined-menu .mm-small:hover{border-color:#e4bdff;background:radial-gradient(circle at 35% 25%,#78559a,#36204c);box-shadow:0 0 16px #bd83ff80}
-#timeline-switcher-v1 .mm-splash,#meeme-translation .mm-splash,#meeme-preset-toggles .mm-splash{position:absolute;inset:0;z-index:10;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;background:#201332b8;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:15px;pointer-events:none}
-#timeline-switcher-v1 .mm-splash[hidden],#meeme-translation .mm-splash[hidden],#meeme-preset-toggles .mm-splash[hidden]{display:none!important}
-#timeline-switcher-v1 .mm-splash img,#meeme-translation .mm-splash img,#meeme-preset-toggles .mm-splash img{display:block;width:128px;height:128px;max-width:calc(100% - 24px);max-height:65%;object-fit:contain;border-radius:50%;clip-path:circle(49%);filter:drop-shadow(0 0 16px #b67bf65e)}
-#timeline-switcher-v1 .mm-splash span,#meeme-translation .mm-splash span,#meeme-preset-toggles .mm-splash span{font:14px/1.5 system-ui;color:#f1e8fd;text-align:center;padding:0 16px}
+#mm-db-panel .mm-splash,#timeline-switcher-v1 .mm-splash,#meeme-translation .mm-splash,#meeme-preset-toggles .mm-splash{position:absolute;inset:0;z-index:10;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;background:#201332b8;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:15px;pointer-events:none}
+#mm-db-panel .mm-splash[hidden],#timeline-switcher-v1 .mm-splash[hidden],#meeme-translation .mm-splash[hidden],#meeme-preset-toggles .mm-splash[hidden]{display:none!important}
+#mm-db-panel .mm-splash img,#timeline-switcher-v1 .mm-splash img,#meeme-translation .mm-splash img,#meeme-preset-toggles .mm-splash img{display:block;width:128px;height:128px;max-width:calc(100% - 24px);max-height:65%;object-fit:contain;border-radius:50%;clip-path:circle(49%);filter:drop-shadow(0 0 16px #b67bf65e)}
+#mm-db-panel .mm-splash span,#timeline-switcher-v1 .mm-splash span,#meeme-translation .mm-splash span,#meeme-preset-toggles .mm-splash span{font:14px/1.5 system-ui;color:#f1e8fd;text-align:center;padding:0 16px}
 @media(prefers-reduced-motion:reduce){#timeline-switcher-v1 .ts-orb.mm-tool-active{filter:none}}
 /* —— 皮肤系统 —— */
 #meeme-combined-menu .mm-skin{transition-delay:68ms;border-color:#c9a86a;background:radial-gradient(circle at 35% 25%,#3d3226,#171207)}
@@ -2103,7 +2103,7 @@ html[data-mm-theme=p5] #meeme-preset-toggles .mp-sec-head{background:#1a0508}
 html[data-mm-theme=p5] #meeme-preset-toggles .mp-tools input,html[data-mm-theme=p5] #meeme-preset-toggles .mp-ed-box input,html[data-mm-theme=p5] #meeme-preset-toggles .mp-ed-box textarea{background:#0a0a0c;border-color:#43434b;color:#f5f5f7}
 html[data-mm-theme=p5] #meeme-preset-toggles .mp-ed-box,html[data-mm-theme=p5] .mm-skin-panel{background:#111114;border-color:#e60012;border-radius:6px}
 html[data-mm-theme=p5] #meeme-preset-toggles .mp-status{color:#ff8a94}
-html[data-mm-theme=p5] #timeline-switcher-v1 .mm-splash,html[data-mm-theme=p5] #meeme-translation .mm-splash,html[data-mm-theme=p5] #meeme-preset-toggles .mm-splash{background:#0c0c0ed0}
+html[data-mm-theme=p5] #mm-db-panel .mm-splash,html[data-mm-theme=p5] #timeline-switcher-v1 .mm-splash,html[data-mm-theme=p5] #meeme-translation .mm-splash,html[data-mm-theme=p5] #meeme-preset-toggles .mm-splash{background:#0c0c0ed0}
 html[data-mm-theme=p5] #timeline-switcher-v1 .mm-return,html[data-mm-theme=p5] #meeme-translation .mm-return,html[data-mm-theme=p5] #meeme-preset-toggles .mm-return{background:#17171a;border-color:#e60012;color:#fff}
 /* —— 重返未来 · 1999 —— */
 html[data-mm-theme=r1999] #meeme-combined-menu .mm-small{border-color:#c9a86a;background:radial-gradient(circle at 35% 25%,#1e4038,#0b1715);box-shadow:0 0 14px #c9a86a44}
@@ -2127,7 +2127,7 @@ html[data-mm-theme=r1999] #meeme-preset-toggles .mp-sec-head{background:#122822}
 html[data-mm-theme=r1999] #meeme-preset-toggles .mp-tools input,html[data-mm-theme=r1999] #meeme-preset-toggles .mp-ed-box input,html[data-mm-theme=r1999] #meeme-preset-toggles .mp-ed-box textarea{background:#0b1715;border-color:#6d5c3e;color:#efe6cf}
 html[data-mm-theme=r1999] #meeme-preset-toggles .mp-ed-box,html[data-mm-theme=r1999] .mm-skin-panel{background:#0f1f1c;border-color:#c9a86a}
 html[data-mm-theme=r1999] #meeme-preset-toggles .mp-status{color:#d3b476}
-html[data-mm-theme=r1999] #timeline-switcher-v1 .mm-splash,html[data-mm-theme=r1999] #meeme-translation .mm-splash,html[data-mm-theme=r1999] #meeme-preset-toggles .mm-splash{background:rgba(13,27,25,.82)}
+html[data-mm-theme=r1999] #mm-db-panel .mm-splash,html[data-mm-theme=r1999] #timeline-switcher-v1 .mm-splash,html[data-mm-theme=r1999] #meeme-translation .mm-splash,html[data-mm-theme=r1999] #meeme-preset-toggles .mm-splash{background:rgba(13,27,25,.82)}
 html[data-mm-theme=r1999] #timeline-switcher-v1 .mm-return,html[data-mm-theme=r1999] #meeme-translation .mm-return,html[data-mm-theme=r1999] #meeme-preset-toggles .mm-return{background:#16302b;border-color:#c9a86a;color:#efe6cf}
 /* —— 皮肤系统 r2：面板内文字选择器保护 —— */
 #meeme-combined-menu .mm-skin-panel span{font-size:13px;line-height:1.35}
@@ -2179,8 +2179,8 @@ html[data-mm-theme=r1999] .mm-skin-close{border-radius:50%;border-color:#6d5c3e;
 html[data-mm-theme=r1999] .mm-skin-close:hover{background:#1e4038;border-color:#c9a86a}
 html[data-mm-theme=r1999] .mm-skin-tip{color:#8fa39a}
 /* —— 主题字体：整体字体跟随原作 —— */
-html[data-mm-theme=p5] #timeline-switcher-v1,html[data-mm-theme=p5] #meeme-translation,html[data-mm-theme=p5] #meeme-preset-toggles,html[data-mm-theme=p5] #meeme-combined-menu{font-family:'Arial Black','Helvetica Neue','PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif!important;font-weight:700;letter-spacing:.02em}
-html[data-mm-theme=r1999] #timeline-switcher-v1,html[data-mm-theme=r1999] #meeme-translation,html[data-mm-theme=r1999] #meeme-preset-toggles,html[data-mm-theme=r1999] #meeme-combined-menu{font-family:Georgia,'Times New Roman','Noto Serif SC','Source Han Serif SC','Songti SC','SimSun',serif!important}
+html[data-mm-theme=p5] #timeline-switcher-v1,html[data-mm-theme=p5] #meeme-translation,html[data-mm-theme=p5] #meeme-preset-toggles,html[data-mm-theme=p5] #meeme-combined-menu,html[data-mm-theme=p5] #mm-db-panel{font-family:'Arial Black','Helvetica Neue','PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif!important;font-weight:700;letter-spacing:.02em}
+html[data-mm-theme=r1999] #timeline-switcher-v1,html[data-mm-theme=r1999] #meeme-translation,html[data-mm-theme=r1999] #meeme-preset-toggles,html[data-mm-theme=r1999] #meeme-combined-menu,html[data-mm-theme=r1999] #mm-db-panel{font-family:Georgia,'Times New Roman','Noto Serif SC','Source Han Serif SC','Songti SC','SimSun',serif!important}
 /* —— 1999 问候对话框 —— */
 .mm-greet{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:2147483555;pointer-events:none}
 .mm-greet[hidden]{display:none!important}
@@ -2191,7 +2191,7 @@ html[data-mm-theme=r1999] #timeline-switcher-v1,html[data-mm-theme=r1999] #meeme
 .mm-greet-close:hover{border-color:#c9a86a;color:#f4e8c8}
 /* —— 数据库可视化面板 —— */
 #meeme-combined-menu .mm-db{transition-delay:0ms;border-color:#5da8a0;background:radial-gradient(circle at 35% 25%,#1d3d3a,#0a1a18)}
-.mm-db-panel{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(440px,94vw);height:min(78vh,760px);z-index:2147483455;background:linear-gradient(160deg,#1a1030,#0d0620);border:1px solid #6f4bb0;border-radius:14px;box-shadow:0 18px 60px #000c;display:flex;flex-direction:column;overflow:hidden;pointer-events:auto;color:#e6e6fa}
+.mm-db-panel{position:fixed;font:14px/1.55 system-ui;left:50%;top:50%;transform:translate(-50%,-50%);width:min(440px,94vw);height:min(78vh,760px);z-index:2147483455;background:linear-gradient(160deg,#1a1030,#0d0620);border:1px solid #6f4bb0;border-radius:14px;box-shadow:0 18px 60px #000c;display:flex;flex-direction:column;overflow:hidden;pointer-events:auto;color:#e6e6fa}
 .mm-db-panel[hidden]{display:none!important}
 .mm-db-head{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:1px solid #ffffff1f;background:#00000030;flex:none}
 .mm-db-head b{flex:1;font-size:15px;letter-spacing:.04em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -2234,6 +2234,7 @@ html[data-mm-theme=r1999] .mm-db-foot{border-top:1px solid #c9a86a44}
  const time=root.querySelector('.mm-time'),text=root.querySelector('.mm-text'),presetBtn=root.querySelector('.mm-preset'),skinBtn=root.querySelector('.mm-skin'),dbBtn=root.querySelector('.mm-db');
  const skinPanel=root.querySelector('.mm-skin-panel'),skinList=root.querySelector('.mm-skin-list');
  const dbPanel=root.querySelector('#mm-db-panel'),dbBody=dbPanel.querySelector('.mm-db-body'),dbFoot=dbPanel.querySelector('.mm-db-foot'),dbTitle=dbPanel.querySelector('.mm-db-title');
+ doc.documentElement.appendChild(dbPanel);
  let state='closed',disposed=false,serial=0;const animations=new Set();
  const splashes=new Map();for(const p of [tp,rp,pp,dbPanel]){const splash=doc.createElement('div');splash.className='mm-splash';splash.hidden=true;splash.setAttribute('aria-hidden','true');splash.innerHTML='<img alt=><span></span>';p.appendChild(splash);splashes.set(p,splash);}
  function place(){
@@ -2287,6 +2288,7 @@ html[data-mm-theme=r1999] .mm-db-foot{border-top:1px solid #c9a86a44}
  function currentTheme(){try{return host.localStorage.getItem(THEME_KEY)||'';}catch(_){return '';}}
  function paintSkin(){const cur=currentTheme();for(const b of skinList.children)b.dataset.on=String(b.dataset.themeId===cur);}
  const greetBox=root.querySelector('.mm-greet');
+doc.documentElement.appendChild(greetBox);
 let greetTimer=0;
 async function greet(show,silent,force){
  host.clearTimeout(greetTimer);
@@ -2390,7 +2392,7 @@ greetBox.querySelector('.mm-greet-close').onclick=()=>greet(false,false,true);
  function key(e){if(e.key==='Escape'&&state!=='closed'){e.preventDefault();e.stopImmediatePropagation();change(state==='menu'?'closed':'menu');}}
  doc.addEventListener('keydown',key,true);host.addEventListener('resize',place);host.visualViewport?.addEventListener('resize',place);host.visualViewport?.addEventListener('scroll',place);
  const observer=new host.MutationObserver(place);observer.observe(orb,{attributes:true,attributeFilter:['style']});
- function cleanup(){if(disposed)return;disposed=true;++serial;try{dbApiRef?.unregisterTableUpdateCallback?.(dbOnUpdate);}catch(_){ }cancelAnimations();observer.disconnect();doc.removeEventListener('keydown',key,true);doc.removeEventListener('pointerdown',skinOutside,true);host.removeEventListener('resize',place);host.visualViewport?.removeEventListener('resize',place);host.visualViewport?.removeEventListener('scroll',place);root.remove();delete host.__meemeCombinedUI;}
+ function cleanup(){if(disposed)return;disposed=true;++serial;try{dbApiRef?.unregisterTableUpdateCallback?.(dbOnUpdate);}catch(_){ }cancelAnimations();dbPanel.remove();greetBox.remove();observer.disconnect();doc.removeEventListener('keydown',key,true);doc.removeEventListener('pointerdown',skinOutside,true);host.removeEventListener('resize',place);host.visualViewport?.removeEventListener('resize',place);host.visualViewport?.removeEventListener('scroll',place);root.remove();delete host.__meemeCombinedUI;}
  window.addEventListener('pagehide',cleanup,{once:true});place();menuVisible(false);
 })();
 
