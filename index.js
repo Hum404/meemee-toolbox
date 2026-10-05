@@ -1,4 +1,5 @@
 // 咩咩工具箱 · SillyTavern 扩展版 · 1.1.0
+// 基于 SheepSheep 原咩咩工具箱的社区二改版 · Hum404
 // 由脚本版 1.5.0 转换：扩展加载早于脚本环境，前置层等 SillyTavern 主上下文（及酒馆助手 TavernHelper）就绪后，
 // 把脚本环境的全局函数桥接到主窗口，再启动原始包体。
 (() => {
@@ -51,6 +52,13 @@ function __meemeeBoot() {
   if (host.__meemeeToolboxExt) return;
   host.__meemeeToolboxExt = true;
   __meemeeBridge();
+  try {
+    const ctx = host.SillyTavern.getContext();
+    if (ctx && ctx.extensionSettings) {
+      const s = ctx.extensionSettings['meemeCombined'] = ctx.extensionSettings['meemeCombined'] || {};
+      s.displayName = '咩咩工具箱（时间线 · 翻译 · 预设）· 基于 SheepSheep 原咩咩工具箱的社区二改版';
+    }
+  } catch (_) {}
   __meemeeMain();
 }
 
